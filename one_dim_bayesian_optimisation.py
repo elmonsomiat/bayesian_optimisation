@@ -13,7 +13,7 @@ class BayesianOptimizer(object):
             self.kernel = C(1.0, (1e-3, 1e3)) * RBF(1, (1e-2, 1e2))
         else:
             self.kernel=kernel
-        self.gpr = GaussianProcessRegressor(kernel=self.kernel, n_restarts_optimizer=30)
+        self.gpr = GaussianProcessRegressor(kernel=self.kernel, n_restarts_optimizer=50)
 
     def acquisition_function_calculation(self, x, y_pred, sigma):
         '''
