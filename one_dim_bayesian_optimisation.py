@@ -10,7 +10,7 @@ class BayesianOptimizer(object):
     """docstring for BayesianOptimizer"""
     def __init__(self, kernel=None):
         if kernel==None:
-            self.kernel = C(1.0, (1e-1, 1e2)) * RBF(1, (1e-2, 1e2))
+            self.kernel = C(1.0, (1, 1e2)) * RBF(1, (1e-2, 1))
         else:
             self.kernel=kernel
         self.gpr = GaussianProcessRegressor(kernel=self.kernel, n_restarts_optimizer=50)
